@@ -17,7 +17,7 @@ def get_long_description() -> str:
 
 
 def get_version() -> str:
-    black_py = CURRENT_DIR / "black.py"
+    black_py = CURRENT_DIR / "black2.py"
     _version_re = re.compile(r"__version__\s+=\s+(?P<version>.*)")
     with open(black_py, "r", encoding="utf8") as f:
         match = _version_re.search(f.read())
@@ -26,7 +26,7 @@ def get_version() -> str:
 
 
 setup(
-    name="black",
+    name="black2",
     version=get_version(),
     description="The uncompromising code formatter.",
     long_description=get_long_description(),
@@ -36,7 +36,7 @@ setup(
     author_email="lukasz@langa.pl",
     url="https://github.com/ambv/black",
     license="MIT",
-    py_modules=["black", "blackd"],
+    py_modules=["black2", "black2d"],
     packages=["blib2to3", "blib2to3.pgen2"],
     package_data={"blib2to3": ["*.txt"]},
     python_requires=">=3.6",
@@ -59,8 +59,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "black=black:patched_main",
-            "blackd=blackd:patched_main [d]",
+            "black2=black2:patched_main",
+            "black2d=black2d:patched_main [d]",
         ]
     },
 )
